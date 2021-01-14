@@ -192,33 +192,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="删除表格"><a href="#删除表格" class="headerlink" title="删除表格"></a>删除表格</h4><p>所有数据，保留表的结构，效率比较(实际考察SQL语句的处理速度)</p>
+        <h4 id="1-删除表格"><a href="#1-删除表格" class="headerlink" title="1. 删除表格"></a>1. 删除表格</h4><p>所有数据，保留表的结构，效率比较(实际考察SQL语句的处理速度)</p>
 <p>速度：drop &gt; truncate &gt; delete</p>
 <ul>
-<li><p>drop：一次性删除所有数据，也删除表的结构，表占用的空间全部释放</p>
-</li>
-<li><p>delete:每次都删除一行数据，<strong>只删除数据保留表结构</strong>，事务记录在日志中，为了回滚操作，不会释放空间  table view</p>
-</li>
-<li><p>truncate:一次性删除所有数据，<strong>只删除数据保留表结构</strong>，删除后不可恢复，table</p>
-</li>
+<li>drop：一次性删除所有数据，也删除表的结构，表占用的空间全部释放</li>
+<li>delete:每次都删除一行数据，<strong>只删除数据保留表结构</strong>，事务记录在日志中，为了回滚操作，不会释放空间  table view</li>
+<li>truncate:一次性删除所有数据，<strong>只删除数据保留表结构</strong>，删除后不可恢复，table</li>
 </ul>
-<h4 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h4><ul>
+<h4 id="2-正则表达式"><a href="#2-正则表达式" class="headerlink" title="2. 正则表达式"></a>2. 正则表达式</h4><ul>
 <li>^[1-9][0-9]{4,12}$/ :以1-9开头 0-9结尾，4-12位，不包括4位</li>
 </ul>
-<h4 id="缓冲区"><a href="#缓冲区" class="headerlink" title="缓冲区"></a>缓冲区</h4><ul>
+<h4 id="3-缓冲区"><a href="#3-缓冲区" class="headerlink" title="3. 缓冲区"></a>3. 缓冲区</h4><ul>
 <li>缓冲区(buffer)，它是内存空间的一部分。也就是说，在内存空间中预留了一定的存储空间，这些存储空间用来缓冲输入或输出的数据，这部分预留的空间就叫做缓冲区，显然缓冲区是具有一定大小的。<br>缓冲区根据其对应的是输入设备还是输出设备，分为输入缓冲区和输出缓冲区。</li>
 </ul>
-<h4 id="进制-72-78-192-任何数的0次方都是1"><a href="#进制-72-78-192-任何数的0次方都是1" class="headerlink" title="进制 72+78=192  任何数的0次方都是1"></a>进制 72+78=192  任何数的0次方都是1</h4><ul>
-<li>X进制：7<em>X^1+2</em>X^0+7<em>X^1+8</em>X^0=192  x=13</li>
+<h4 id="4-进制"><a href="#4-进制" class="headerlink" title="4. 进制"></a>4. 进制</h4><ul>
+<li><p>72+78=192  任何数的0次方都是1</p>
+</li>
+<li><p>X进制：7<em>X^1+2</em>X^0+7<em>X^1+8</em>X^0=192  x=13</p>
+</li>
 </ul>
-<h4 id="单例模式类"><a href="#单例模式类" class="headerlink" title="单例模式类"></a>单例模式类</h4><ul>
-<li><p>概念：一个类只有一个实例(判断实例是否存在，存在直接返回，不存在创建后返回)</p>
-</li>
-<li><p>作用 ：保证类的对象唯一；防止变量污染</p>
-</li>
+<h4 id="5-单例模式类"><a href="#5-单例模式类" class="headerlink" title="5. 单例模式类"></a>5. 单例模式类</h4><ul>
+<li>概念：一个类只有一个实例(判断实例是否存在，存在直接返回，不存在创建后返回)</li>
+<li>作用 ：保证类的对象唯一；防止变量污染</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单体模式</span></span><br><span class="line">构造函数 - 返回值是一个函数(判断是否实例化) - 整个写入一个函数中，赋值给一个变量</span><br><span class="line"><span class="keyword">var</span> Singleton = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name;</span><br><span class="line">  <span class="built_in">this</span>.instance = <span class="literal">null</span>;</span><br><span class="line">&#125;;</span><br><span class="line">Singleton.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">this</span>.name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取实例对象</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInstance</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!<span class="built_in">this</span>.instance) &#123;</span><br><span class="line">      <span class="built_in">this</span>.instance = <span class="keyword">new</span> Singleton(name);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">this</span>.instance;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 测试单体模式的实例</span></span><br><span class="line"><span class="keyword">var</span> a = getInstance(<span class="string">&quot;aa&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> b = getInstance(<span class="string">&quot;bb&quot;</span>);</span><br></pre></td></tr></table></figure>
-
       
 
       
