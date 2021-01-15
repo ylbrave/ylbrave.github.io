@@ -197,21 +197,9 @@
 <p>先拼接：10050，</p>
 <p>再计算：50转换为数值类型 10050-50=10000</p>
 <h4 id="2-数组"><a href="#2-数组" class="headerlink" title="2. 数组"></a>2. 数组</h4><p>push()：一次只可以插入一个数值，当存在多个数值时，后面的会覆盖前面的数值。最后插入的数值是最后一个数值。push()可以插入一个数组，形成二维数组</p>
-<h4 id="3-布尔"><a href="#3-布尔" class="headerlink" title="3. 布尔"></a>3. 布尔</h4><p>console.log([] ? true : false); //true</p>
-<p>console.log({} ? true : false);  //true</p>
-<p>console.log([] == false); //true</p>
-<p>console.log({} == false); //false</p>
-<p>console.log(NaN == NaN); //false</p>
-<p>作为条件判断：[]—true {}—true 0—false ‘0’—true</p>
-<p>作为比较判断：[]—false{}—true</p>
-<p>转换为布尔值为false： ‘’NaN undefined null 0</p>
-<p>转换为数值类型</p>
-<p>0: ‘’    false    []</p>
-<p>NaN: undefined    {}</p>
-<h4 id="4-获取dom元素"><a href="#4-获取dom元素" class="headerlink" title="4. 获取dom元素"></a>4. 获取dom元素</h4><p>querySelector：没有此元素时返回null</p>
-<h4 id="5-事件流"><a href="#5-事件流" class="headerlink" title="5.事件流"></a>5.事件流</h4><p>事件捕获  事件处理    事件冒泡</p>
-<h4 id="6-创建一个类"><a href="#6-创建一个类" class="headerlink" title="6. 创建一个类"></a>6. 创建一个类</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params">name = <span class="string">&#x27;cxk&#x27;</span>, age = <span class="string">&#x27;23&#x27;</span></span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">print</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Students</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">     <span class="function"><span class="title">constructor</span>(<span class="params">name</span>)</span> &#123;</span><br><span class="line">         <span class="built_in">super</span>(name);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="function"><span class="title">print</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">         <span class="built_in">super</span>.print();</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">var</span> s = <span class="keyword">new</span> Students();</span><br><span class="line"> <span class="built_in">console</span>.log(s.name);</span><br><span class="line"> <span class="keyword">var</span> p = <span class="keyword">new</span> Students(<span class="string">&#x27;yangli&#x27;</span>);</span><br><span class="line"> p.print();</span><br><span class="line"> <span class="comment">//类声明</span></span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line"> <span class="function"><span class="title">constructor</span>(<span class="params">name=<span class="string">&#x27;dg&#x27;</span>,age=<span class="number">60</span></span>)</span>&#123;	<span class="comment">//相当于在函数里写了一个默认值</span></span><br><span class="line">     <span class="built_in">this</span>.name = name;	</span><br><span class="line">     <span class="built_in">this</span>.age = age;</span><br><span class="line"> &#125;	<span class="comment">//这里不用添逗号，否贼会报错</span></span><br><span class="line"> <span class="function"><span class="title">showMsg</span>(<span class="params"></span>)</span>&#123;    <span class="comment">//定义在原型上</span></span><br><span class="line">     <span class="built_in">console</span>.log(<span class="built_in">this</span>.age,<span class="built_in">this</span>.name)</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="title">print</span>(<span class="params"></span>)</span>&#123;      <span class="comment">//定义在原型上</span></span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">&#x27;xxx&#x27;</span>)	</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br><span class="line"> <span class="built_in">console</span>.log(Person.prototype.showMsg == p.showMsg()<span class="comment">//true</span></span><br><span class="line"> <span class="comment">//我们来判断一下p.showMsg()是不是写在原型链上</span></span><br><span class="line"><span class="comment">//类表达式声明</span></span><br><span class="line"><span class="keyword">const</span> Person = <span class="class"><span class="keyword">class</span></span>&#123;</span><br><span class="line"><span class="function"><span class="title">constructor</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">this</span>.name = <span class="string">&#x27;xm&#x27;</span></span><br><span class="line">	 &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="comment">//类继承和绑定子类this的功能</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params">name=<span class="string">&#x27;cz&#x27;</span></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line"> 	&#125;</span><br><span class="line">    <span class="function"><span class="title">print</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="built_in">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">super</span>(name)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">print</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.print();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> B();</span><br></pre></td></tr></table></figure>
-
+        
+          <a class="article-more-a" href="/2021/01/15/banggu/#more">more >></a>
+        
       
 
       
@@ -329,31 +317,9 @@
 </ul>
 </li>
 </ul>
-<h4 id="2-DOMContentLoaded和load区别与用途"><a href="#2-DOMContentLoaded和load区别与用途" class="headerlink" title="2. DOMContentLoaded和load区别与用途"></a>2. DOMContentLoaded和load区别与用途</h4><ul>
-<li><p>DOMContentLoaded事件：页面dom加载完成触发，无需等待后续图片等资源。HTML文档加载和解析的过程。**(<strong><strong>渲染树的生成是基于DOM和CSSOM的。但是触发DOMContentLoaded的时间依然是在HTML解析为DOM后，无论此时CSS解析为CSSOM的过程是否完成。</strong></strong>)**</p>
-</li>
-<li><p>load事件：整个页面所有资源加载完成之后触发；load一定在DOMContentLoaded之后触发</p>
-</li>
-</ul>
-<p>Defer 不影响HTML页面的渲染，等到HTML渲染完成之后执行js脚本</p>
-<h4 id="3-移动端页面布局"><a href="#3-移动端页面布局" class="headerlink" title="3. 移动端页面布局"></a>3. 移动端页面布局</h4><p>头部和底部固定，高度为50px，中间内容自适应高度</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span> *<span class="attr">lang</span>*=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> *<span class="attr">charset</span>*=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">            *&#123;</span><br><span class="line"><span class="css">                <span class="selector-tag">margin</span><span class="selector-pseudo">:0</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">padding</span><span class="selector-pseudo">:0</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"><span class="css">            <span class="selector-class">.top</span> &#123;</span></span><br><span class="line">                width: 100%;</span><br><span class="line">                height: 40px;</span><br><span class="line"><span class="css">                <span class="selector-tag">background</span>: <span class="selector-id">#000</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">color</span>:<span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">position</span><span class="selector-pseudo">:absolute</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">top</span><span class="selector-pseudo">:0</span>;</span></span><br><span class="line"><span class="css">                <span class="comment">/*以上设置是重点必须的*/</span></span></span><br><span class="line"><span class="css">                <span class="selector-tag">text-align</span><span class="selector-pseudo">:center</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">line-height</span><span class="selector-pseudo">:40px</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"><span class="css">            <span class="selector-class">.bottom</span>&#123;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">width</span><span class="selector-pseudo">:100</span>%;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">height</span><span class="selector-pseudo">:40px</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">background</span>:<span class="selector-id">#000</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">color</span>:<span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">position</span><span class="selector-pseudo">:absolute</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">bottom</span><span class="selector-pseudo">:0</span>;</span></span><br><span class="line"><span class="css">                <span class="comment">/*以上设置是重点必须的*/</span></span></span><br><span class="line"><span class="css">                <span class="selector-tag">text-align</span><span class="selector-pseudo">:center</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">line-height</span><span class="selector-pseudo">:40px</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"><span class="css">            <span class="selector-class">.mainBox</span>&#123;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">width</span><span class="selector-pseudo">:100</span>%;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">position</span><span class="selector-pseudo">:absolute</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">top</span><span class="selector-pseudo">:40px</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">bottom</span><span class="selector-pseudo">:40px</span>;</span></span><br><span class="line"><span class="css">                <span class="comment">/*以上设置是重点必须的*/</span></span></span><br><span class="line">            &#125;</span><br><span class="line"><span class="css">            <span class="selector-class">.mainBox</span> <span class="selector-class">.leftBox</span>&#123;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">height</span><span class="selector-pseudo">:100</span>%;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">width</span><span class="selector-pseudo">:200px</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">float</span><span class="selector-pseudo">:left</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">margin-bottom</span><span class="selector-pseudo">:40px</span>;</span></span><br><span class="line">                overflow: auto;</span><br><span class="line"><span class="css">                <span class="comment">/*以上设置是重点必须的*/</span></span></span><br><span class="line"><span class="css">                <span class="selector-tag">border</span><span class="selector-pseudo">:6px</span> <span class="selector-tag">solid</span> <span class="selector-tag">green</span>;</span></span><br><span class="line">                -webkit-box-sizing: border-box;</span><br><span class="line">                -moz-box-sizing: border-box;</span><br><span class="line">                box-sizing: border-box;</span><br><span class="line"><span class="css">                <span class="selector-tag">text-align</span><span class="selector-pseudo">:center</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">line-height</span><span class="selector-pseudo">:40px</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"><span class="css">            <span class="selector-class">.mainBox</span> <span class="selector-class">.rightBox</span>&#123;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">height</span><span class="selector-pseudo">:100</span>%;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">margin-left</span><span class="selector-pseudo">:220px</span>;</span></span><br><span class="line"><span class="css">                <span class="comment">/*以上设置是重点必须的*/</span></span></span><br><span class="line"><span class="css">                <span class="selector-tag">border</span><span class="selector-pseudo">:6px</span> <span class="selector-tag">solid</span> <span class="selector-tag">crimson</span>;</span></span><br><span class="line">                -webkit-box-sizing: border-box;</span><br><span class="line">                -moz-box-sizing: border-box;</span><br><span class="line">                box-sizing: border-box;</span><br><span class="line">                overflow: auto;</span><br><span class="line"><span class="css">                <span class="selector-tag">text-align</span><span class="selector-pseudo">:center</span>;</span></span><br><span class="line"><span class="css">                <span class="selector-tag">line-height</span><span class="selector-pseudo">:40px</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> *<span class="attr">class</span>*=<span class="string">&quot;top&quot;</span>&gt;</span>顶部，高度40px<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> *<span class="attr">class</span>*=<span class="string">&quot;mainBox&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> *<span class="attr">class</span>*=<span class="string">&quot;leftBox&quot;</span>&gt;</span>左盒子，固定宽度200px，高度自适应铺满屏幕剩余高度<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> *<span class="attr">class</span>*=<span class="string">&quot;rightBox&quot;</span>&gt;</span>右盒子，距离左盒子20px，高度自适应宽度自适应铺满屏幕剩余高度<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> *<span class="attr">class</span>*=<span class="string">&quot;bottom&quot;</span>&gt;</span>底部，高度40px<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="4-节流函数，适用场景"><a href="#4-节流函数，适用场景" class="headerlink" title="4. 节流函数，适用场景"></a>4. 节流函数，适用场景</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fn是我们需要包装的事件回调, interval是时间间隔的阈值</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, interval</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// last为上一次触发回调的时间</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> last = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将throttle处理结果当作函数返回</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 保留调用时的this上下文</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> context = <span class="built_in">this</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 保留调用时传入的参数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> args = <span class="built_in">arguments</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 记录本次触发回调的时间</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> now = + <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断上次触发的时间和本次触发的时间差是否小于时间间隔的阈值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (now - last &gt;= interval) &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果时间间隔大于我们设定的时间间隔阈值，则执行回调</span></span><br><span class="line"></span><br><span class="line">last = now;</span><br><span class="line"></span><br><span class="line">fn.apply(context, args);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>**使用场景： **</p>
-<p>鼠标不停的点击按钮触发事件。</p>
-<p>监听滚动事件。</p>
-<p>// 用throttle来包装scroll的回调</p>
-<p>const better_scroll = throttle(() =&gt; console.log(‘触发了滚动事件’), 1000)</p>
-<p>document.addEventListener(‘scroll’, better_scroll)</p>
-<h4 id="5-ES6继承"><a href="#5-ES6继承" class="headerlink" title="5. ES6继承"></a>5. ES6继承</h4><p>实现继承与传参</p>
-<p><strong>ES6:</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">parent</span></span>&#123;</span><br><span class="line"></span><br><span class="line">　　<span class="function"><span class="title">constructor</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">　　　　<span class="built_in">this</span>.a = a;</span><br><span class="line"></span><br><span class="line">　　　　<span class="built_in">this</span>.b = b;</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　<span class="function"><span class="title">parentMethods</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">　　　　<span class="keyword">return</span> <span class="built_in">this</span>.a + <span class="built_in">this</span>.b</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">child</span> <span class="keyword">extends</span> <span class="title">parent</span></span>&#123;</span><br><span class="line"></span><br><span class="line">　　<span class="function"><span class="title">constructor</span>(<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">　　　　<span class="built_in">super</span>(a,b); <span class="comment">//在子类的 constructor 中必须先调用 super 才能引用 this</span></span><br><span class="line"></span><br><span class="line">　　　　<span class="built_in">this</span>.c = c;</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　<span class="function"><span class="title">childMethods</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">　　　　<span class="keyword">return</span> <span class="built_in">this</span>.c + <span class="string">&#x27;,&#x27;</span> + <span class="built_in">super</span>.parentMethods()</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> point = <span class="keyword">new</span> child(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(point.childMethods()); <span class="comment">//3,3</span></span><br></pre></td></tr></table></figure>
-<p><strong>ES5:</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inserit</span>(<span class="params">son, father</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>.create(father.prototype);<span class="comment">//创建父类原型的副本</span></span><br><span class="line"></span><br><span class="line">son.prototype = obj;<span class="comment">//将该副本的constructor属性指向子类</span></span><br><span class="line"></span><br><span class="line">obj.constructor = son<span class="comment">//将子类的原型属性指向副本</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//父类</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span>(<span class="params">name,colors</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//父类实例属性</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">this</span>.name = name;</span><br><span class="line"></span><br><span class="line"><span class="built_in">this</span>.colors = colors;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//父类原型方法</span></span><br><span class="line"></span><br><span class="line">Father.prototype.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="built_in">this</span>.colors;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//子类</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">job,name,color</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">Father.call(<span class="built_in">this</span>, name, color);</span><br><span class="line"></span><br><span class="line"><span class="built_in">this</span>.job = job;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//寄生式继承：将父类原型的副本强制赋值给子类原型，实现继承父类的原型方法。</span></span><br><span class="line"></span><br><span class="line">inserit(Child, Father);</span><br><span class="line"></span><br><span class="line">Child.prototype.sayjob = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="built_in">this</span>.job;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance= <span class="keyword">new</span> Child(<span class="string">&quot;Clown&quot;</span>,<span class="string">&quot;CXK&quot;</span>,[<span class="string">&quot;jump&quot;</span>,<span class="string">&quot;sing&quot;</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(instance.sayjob(),instance.sayName()) <span class="comment">//Clown,[&quot;jump&quot;,&quot;sing&quot;]</span></span><br></pre></td></tr></table></figure>
-<h4 id="6-跑马灯"><a href="#6-跑马灯" class="headerlink" title="6. 跑马灯"></a>6. 跑马灯</h4><p>隔2s展示下一条用户信息:Marquee</p>
-<h4 id="7-异步执行"><a href="#7-异步执行" class="headerlink" title="7. 异步执行"></a>7. 异步执行</h4><p>setTimeout  nextTick  promise</p>
-<p>nextTick —-promise—- setTimeout</p>
-
+        
+          <a class="article-more-a" href="/2021/01/14/meitu/#more">more >></a>
+        
       
 
       
@@ -388,99 +354,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/01/14/meitu/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-shenxinfu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/13/shenxinfu/">深信服</a>
-    </h1>
-  
-
-        
-        <a href="/2021/01/13/shenxinfu/" class="archive-article-date">
-  	<time datetime="2021-01-13T11:52:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-Content-Length"><a href="#1-Content-Length" class="headerlink" title="1. Content-Length"></a>1. Content-Length</h4><ul>
-<li>表示 实体主体** 部分的大小</li>
-</ul>
-<h4 id="2-CSP-内容安全策略"><a href="#2-CSP-内容安全策略" class="headerlink" title="2. CSP(内容安全策略)"></a>2. CSP(内容安全策略)</h4><ul>
-<li>额外的安全层，检测和削弱某些攻击，包括跨站脚本和数据注入攻击等。</li>
-<li>核心思想：白名单制度，发送CSP头部，告诉被授权执行和被禁止。</li>
-</ul>
-        
-          <a class="article-more-a" href="/2021/01/13/shenxinfu/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/13/shenxinfu/">展开全文 >></a>
         </p>
       
 
@@ -577,6 +450,99 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/01/13/shiyuewangluo/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-shenxinfu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/13/shenxinfu/">深信服</a>
+    </h1>
+  
+
+        
+        <a href="/2021/01/13/shenxinfu/" class="archive-article-date">
+  	<time datetime="2021-01-13T11:52:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-Content-Length"><a href="#1-Content-Length" class="headerlink" title="1. Content-Length"></a>1. Content-Length</h4><ul>
+<li>表示 实体主体** 部分的大小</li>
+</ul>
+<h4 id="2-CSP-内容安全策略"><a href="#2-CSP-内容安全策略" class="headerlink" title="2. CSP(内容安全策略)"></a>2. CSP(内容安全策略)</h4><ul>
+<li>额外的安全层，检测和削弱某些攻击，包括跨站脚本和数据注入攻击等。</li>
+<li>核心思想：白名单制度，发送CSP头部，告诉被授权执行和被禁止。</li>
+</ul>
+        
+          <a class="article-more-a" href="/2021/01/13/shenxinfu/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/13/shenxinfu/">展开全文 >></a>
         </p>
       
 
